@@ -20,7 +20,7 @@ def hash_with_salt(value):
 def hash_df(df, columns):
     df_hashed = df.copy()
     for col in columns:
-        df_hashed[col] = df[col].apply(lambda x: hash_with_salt(str(x)))
+        df_hashed[col] = df[col].apply(lambda x: hash_with_salt(str(x).lower()))
     
     return df_hashed
 
